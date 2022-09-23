@@ -1,0 +1,434 @@
+from tkinter import *
+import random
+#give a variable for making a window
+win=Tk()
+win.geometry("500x500")
+win.title("Troll Button xD")
+win.configure(bg="Purple")
+
+#define randome
+def forfun():
+    x = random.randint(0,int(win.winfo_width())-100)
+
+    y = random.randint(0,int(win.winfo_height()))
+    btn.place_configure(x=x,y=y)
+#Labeling
+Label(win,text="Troll Button",font="ds-digital 20 bold",bg="red",).pack(fill="both")
+
+#Button
+btn=Button(win,text="Click If \n You Can",font="Ariel 16 bold",bg="gold")
+btn.place(x=50,y=60)
+btn.bind('<Enter>',lambda e: forfun())
+
+mainloop()
+
+
+STARTING register
+
+import tkinter
+from tkinter import *
+from tkinter import messagebox
+screen = Tk()
+screen.geometry('500x500')
+screen.title("Registration Form")
+
+def suc():
+    name=name_info.get()
+    age=age_info.get()
+    phone=phone_info.get()
+    email=email_info.get()
+
+    if name=="":
+        messagebox.showerror("Error","Please enter name")
+    elif age == "":
+        messagebox.showerror("Error", "Please enter age")
+
+    elif phone == "":
+        messagebox.showerror("Error", "Please enter phone number")
+
+    if email == "@gmail.com":
+        messagebox.showerror("Error", "Please enter email")
+
+    elif raid_info == "":
+        messagebox.showerror("Error", "Please selcet your gender")
+
+    else:
+        Label(screen,text="Complete Registration",fg="green",font="20").place(x=40,y=300)
+
+        with open(name+".txt","w") as f:
+            f.write(name+"\n")
+            f.write(age+"\n")
+            f.write(phone+"\n")
+            f.write(email+"\n")
+
+def clear():
+    name_entry.delete(0,END)
+    age_entry.delete(0, END)
+    phone_entry.delete(0, END)
+    email_entry.delete(0, END)
+
+def show():
+    pass
+
+
+
+# label
+Label(screen,text = "Registration form", font = "arieal 20 bold",bg="red", fg="blue").pack(fill="both")
+Label(screen,text = "Name", font = "ariel 16").place(x=30,y=70)
+Label(screen,text = "Age", font = "ariel 16").place(x=30,y=110)
+Label(screen,text = "Phone Number", font = "ariel 16").place(x=30,y=150)
+Label(screen,text = "Email Id", font = "ariel 16").place(x=30,y=200)
+Label(screen,text = "Gender", font = "arial 16").place(x=30 , y=250)
+
+# Text Box
+name_info=StringVar()
+name_entry = Entry(screen,font = "ariel 16",bd=4,textvariable=name_info)
+name_entry.place(x = 220 , y = 70)
+
+age_info=StringVar()
+age_entry = Entry(screen,font = "ariel 16",bd=4,textvariable=age_info)
+age_entry.place(x = 220 , y = 110)
+
+phone_info=StringVar()
+phone_entry = Entry(screen,font = "ariel 16",bd=4,textvariable=phone_info)
+phone_entry.place(x = 220 , y = 150)
+
+email_info=StringVar()
+email_entry = Entry(screen,font = "ariel 16",bd=4,textvariable=email_info)
+email_entry.place(x = 220 , y = 200)
+
+#radio button
+
+raid_info=StringVar
+gl = Radiobutton(screen,text = "male", variable= "gender",value="male",font="ariel 16",textvariable=raid_info)
+gl.place(x=215,y=250)
+raid_infoo=StringVar
+gl = Radiobutton(screen,text = "female", variable= "gender",value="female",font="ariel 16",textvariable=raid_infoo)
+gl.place(x=300,y=250)
+
+# Button
+
+Button(screen,text = "Submit",font="ariel 20 bold",bg = "red",fg = "yellow",command=suc).place(x = 200 ,y = 355)
+Button(screen,text="show",font="ariel").place(x=200,y=300)
+Button(screen,text = "Clear",font = "arial 16 bold",bg="red" , fg = "blue",command=clear).place(x=420 , y= 450)
+Button(screen,text = "Show",font = "arial 16 bold",bg="red" , fg = "blue",command=show).place(x=200 , y= 300)
+
+
+mainloop()
+
+STARTING LOGIN  
+
+from tkinter import *
+from tkinter import messagebox
+
+screen = Tk()
+screen.geometry("500x400")
+screen.title("Login")
+
+def suc():
+     username=entry1.get()
+     password=entry2.get()
+     email=entry3.get()
+     if(username=="" and password=="" and email==""):
+         messagebox.showerror("Error","Please enter password/username/Email")
+     elif(username==""):
+         messagebox.showinfo("Error","Please enter username")
+
+     elif (password== ""):
+         messagebox.showinfo("Error", "Please enter password")
+
+     elif (email== ""):
+         messagebox.showinfo("Error", "Please enter email")
+
+     elif (username == "Hello" and password=="hello6677"):
+         messagebox.showinfo("sucess","Logind")
+
+     elif (username == "sonu" and password=="sonu6677"):
+         messagebox.showinfo("sucess","Logind")
+
+
+     else:
+         messagebox.showerror("Oops","Invalid username/password/email")
+
+def clear():
+    entry1.delete(0,END)
+    entry2.delete(0, END)
+
+
+Label(screen,text="Login",font="ariel 16 bold underline",fg="Red").pack()
+Label(screen,text="Username",font="ariel 16 bold ",fg="black").place(x=20,y=100)
+Label(screen,text="Password",font="ariel 16 bold ",fg="black").place(x=20,y=150)
+Label(screen,text="email",font="ariel 16 bold ",fg="black").place(x=20,y=200)
+
+username=StringVar()
+entry1=Entry(screen,font="ariel 16",bd=4,textvariable=username)
+entry1.place(x=150,y=100)
+
+password=StringVar()
+entry2=Entry(screen,font="ariel 16",bd=4,textvariable=password)
+entry2.place(x=150,y=150)
+
+email=StringVar()
+entry3=Entry(screen,font="ariel 16",bd=4,textvariable=email)
+entry3.place(x=150,y=200)
+
+Button(screen,text="Login",font="Ariel 16",bd=2,fg="red",command=suc).place(x=200,y=250)
+Button(screen,text="Clear",font="Ariel 16",bd=2,fg="red",command=clear).place(x=200,y=300)
+
+
+mainloop()
+
+
+STARING SNAKE GAME
+
+import pygame
+pygame.init()
+import  random
+
+
+
+white =(255,255,255)
+red   =(255,0,0)
+black =(0,0,0)
+
+screen_width = 900
+screen_hight = 600
+gamewindow=pygame.display.set_mode((screen_width,screen_hight))
+
+bgimg = pygame.image.load("snake.jpg")
+bgimg = pygame.transform.scale(bgimg,(screen_width,screen_hight)).convert_alpha()
+
+
+
+pygame.display.set_caption("titu")
+pygame.display.update()
+
+clock=pygame.time.Clock()
+font = pygame.font.SysFont(None,55)
+
+
+
+
+def text_screen(text, color, x,y):
+    screen_text = font.render(text,True,color)
+    gamewindow.blit(screen_text, [x,y])
+
+def plot_snake(gameWindow, color,snk_list, snake_size):
+    for x,y in snk_list:
+          pygame.draw.rect(gameWindow, color, [x, y, snake_size, snake_size])
+
+def gameloop():
+    exit_game = False
+    game_over = False
+    snake_x = 45
+    snake_y = 55
+    snake_size = 20
+    velocity_x = 0
+    velocity_y = 0
+    score = 0
+    snk_length = 1
+    snk_list = []
+    init_velocity = 10
+    food_x = random.randint(20, screen_width / 2)
+    food_y = random.randint(20, screen_hight / 2)
+    fps = 30
+
+    while not exit_game:
+        if game_over:
+            gamewindow.fill(white)
+            text_screen("Tum sabse gande noob ho Press enter",red,50,50)
+
+            for event in pygame.event.get():
+                if event.type ==  pygame.QUIT:
+                    exit_game = True
+
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_RETURN:
+                        gameloop()
+        else:
+
+            for event in pygame.event.get():
+                if event.type ==  pygame.QUIT:
+                    exit_game = True
+
+                if event.type == pygame.KEYDOWN:
+                   if event.key == pygame.K_RIGHT:
+                       velocity_x =  init_velocity
+                       velocity_y = 0
+
+                   if event.key == pygame.K_LEFT:
+                       velocity_x = - init_velocity
+                       velocity_y = 0
+
+                   if event.key == pygame.K_UP:
+                       velocity_y = -  init_velocity
+                       velocity_x = 0
+
+                   if event.key == pygame.K_DOWN:
+                       velocity_y =  init_velocity
+                       velocity_x = 0
+
+                   if event.key == pygame.K_s:
+                       velocity_y = init_velocity
+                       velocity_x = 0
+
+                   if event.key == pygame.K_w:
+                       velocity_y = -  init_velocity
+                       velocity_x = 0
+
+                   if event.key == pygame.K_a:
+                       velocity_x = - init_velocity
+                       velocity_y = 0
+
+                   if event.key == pygame.K_d:
+                       velocity_x = init_velocity
+                       velocity_y = 0
+
+
+            snake_x = snake_x + velocity_x
+            snake_y = snake_y + velocity_y
+
+            if abs (snake_x - food_x) < 6 and abs (snake_y - food_y) < 6:
+                 score += 1
+                 print("Score : ", score * 10)
+
+                 food_x = random.randint(20, screen_width / 2)
+                 food_y = random.randint(20, screen_hight / 2)
+                 snk_length += 1
+
+            gamewindow.fill(white)
+            gamewindow.blit(bgimg,(0,0))
+            text_screen("Score:" + str(score * 10), red, 5, 5)
+            pygame.draw.rect(gamewindow, black, [food_x, food_y, snake_size, snake_size])
+            pygame.draw.rect(gamewindow, red, [snake_x, snake_y, snake_size, snake_size])
+
+
+            head = []
+            head.append(snake_x)
+            head.append(snake_y)
+            snk_list.append(head)
+
+            if len(snk_list)>snk_length:
+                 del snk_list[0]
+
+            if snake_x<0 or snake_x>screen_width or snake_y<0 or snake_y >screen_hight:
+                 game_over = True
+                 print("tum noob ho")
+
+             #pygame.draw.rect(gamewindow, red, [snake_x, snake_y, snake_size, snake_size])
+
+            plot_snake(gamewindow,red ,snk_list,snake_size)
+
+        pygame.display.update()
+        clock.tick(fps)
+
+    pygame.quit()
+    quit()
+
+gameloop()
+
+STARTING 2 REGISTER 
+
+from tkinter import *
+from tkinter import messagebox
+screen = Tk()
+screen.geometry("600x500")
+screen.title("Badnam")
+
+#deffine
+def register(company=None):
+    name_info = StringVar()
+    email_info = StringVar()
+    Number_info = StringVar()
+    company_info = StringVar()
+    gender_info = StringVar()
+
+    if(name==""):
+        messagebox.showerror("Error","Please ")
+
+    elif email=="":
+        messagebox.showinfo("Please entry you are email")
+
+    elif Number=="":
+        messagebox.showinfo("Please entry you are phone number")
+
+    elif company=="":
+        messagebox.showinfo("Please entry you are company name")
+
+    else:
+        messagebox.showinfo("fill full registration form")
+
+
+
+name_info = StringVar()
+email_info = StringVar()
+Number_info = StringVar()
+company_info = StringVar()
+gender_info = StringVar()
+
+
+#label
+Label(screen,text = "Form Sign",font = "ariel 16").pack()
+Label(screen,text = "Name---",font = "ariel 16").place(x=20,y=100)
+Label(screen,text = "Email---",font = "ariel 16",).place(x=20,y=150)
+Label(screen,text = "Mobile_Number---",font = "ariel 16",).place(x=20,y=200)
+Label(screen,text = "Company_Name---",font = "ariel 16",).place(x=20,y=250)
+Label(screen,text = "anmol gender---",font = "ariel 16",).place(x=20,y=300)
+
+
+#entry
+name_entry = Entry(screen,font="ariel" ,bd=4)
+name_entry.place(x=250,y=100)
+
+email_entry = Entry(screen,font="ariel" ,bd=4)
+email_entry.place(x=250,y=150)
+
+phone_entry = Entry(screen,font="ariel" ,bd=4)
+phone_entry.place(x=250,y=200)
+
+gender_entry = Entry(screen,font="ariel" ,bd=4)
+gender_entry.place(x=250,y=250)
+
+
+#gender radio button
+gl = Radiobutton(screen,text = "male", variable= "gender",value="male",font="ariel 16")
+gl.place(x=250,y=300)
+
+gl = Radiobutton(screen,text = "female", variable= "gender",value="female",font="ariel 16")
+gl.place(x=350,y=300)
+
+#normal button
+Button(screen,text = "Register" ,font = "ariel 16",bg="red",fg="yellow",bd=3,command=register).place(x=300,y=350)
+
+Button(screen,text = "Clear" ,font = "ariel 16",bg="red",fg="yellow",bd=3).place(x=459,y=440)
+
+mainloop
+
+STARTING TEXT TO SPEACHING 
+
+#define speak
+def speak():
+    t=entry1.get()
+    speach.say(t)
+    speach.runAndWait()
+    speach.stop()
+    if(t==""):
+        messagebox.showerror("Error","Please entry text")
+
+
+#label
+lf=LabelFrame(screen,text="Type to speach",font="ariel 16",bd=4,bg="pink")
+lf.pack(fill="both",expand="yes",padx=10,pady=10)
+Label(lf,text="Text",font="ariel 16",padx=15).pack(side=LEFT)
+#text entry
+text= StringVar()
+entry1=Entry(lf,width="40",bd=4,font="ariel 16",textvariable=text)
+entry1.pack(side=LEFT,padx=50)
+
+
+#button
+Button(lf,text="speach",font="ariel 16",command=speak).pack(side=LEFT,padx=10)
+
+mainloop()
+
+
